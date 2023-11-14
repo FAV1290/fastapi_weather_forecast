@@ -1,7 +1,7 @@
 import requests
 
 
-from constants import API_CALL_URL, API_KEY
+from app.constants import API_CALL_URL, API_KEY
 
 
 class OpenWeatherAPI:
@@ -22,8 +22,8 @@ class OpenWeatherAPI:
             'appid': self.api_key,
             'units': self.units,
         }
-        return requests.get(self.url, params=api_call_params)    
-    
+        return requests.get(self.url, params=api_call_params)
+
     def parse_current_temperature(
         self,
         latitude: float,
@@ -31,5 +31,6 @@ class OpenWeatherAPI:
     ) -> float | None:
         response = self.fetch_api_weather_response(latitude, longitude)
         if response.status_code == 200:
-            return response.json()['main']['temp']
+            current_temp: float = response.json()['main']['temp']
+            return current_temp
         return None

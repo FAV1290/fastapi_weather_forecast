@@ -1,8 +1,8 @@
-import geopy.geocoders
 import geopy.location
+import geopy.geocoders
 
 
-from constants import GEOCODER_USER_AGENT
+from app.constants import GEOCODER_USER_AGENT
 
 
 def fetch_geocoder_location_object(location_input: str) -> geopy.location.Location | None:
