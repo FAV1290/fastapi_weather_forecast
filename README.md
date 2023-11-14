@@ -18,7 +18,7 @@ Current temperature in chosen location parser on FastAPI:
 + Get your free API key on https://openweathermap.org/api
 + Add environment variable or .env line `OPEN_WEATHER_API_KEY` with your API key
 + Start uvicorn server: `python __main__.py`
-+ Input `http://127.0.0.1:8000/weather/{location_name}` in your web browser or...
++ Input `http://127.0.0.1:8000/weather/{location}` (where {location} is your preferred location) in your web browser or...
 + Inpit `http://127.0.0.1:8000/docs`in your web browser and use FastAPI interface to get response
 
 ## How does it look?
